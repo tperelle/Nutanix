@@ -1,0 +1,9 @@
+---
+
+####################### ANSIBLE ########################
+# Directories
+DIR_FILES: "{{ playbook_dir }}/files"
+DIR_ROLES: "{{ playbook_dir }}/roles"
+
+####################### REMOTE #########################
+REMOTE_USER: "treeptik"

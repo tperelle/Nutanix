@@ -1,6 +1,6 @@
 ---
 
-- hosts: cluster_infra:&linux:&worker
+- hosts: linux
   remote_user: treeptik
   gather_facts: False
 

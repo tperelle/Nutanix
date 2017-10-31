@@ -1,6 +1,6 @@
 ---
 
-- name: Set authorized key took from file
+- name: Set authorized key took from files
   authorized_key:
     user: treeptik
     state: present

@@ -1,8 +1,7 @@
 ---
 
 - hosts: linux
-  remote_user: treeptik
-  gather_facts: False
+  remote_user: "{{ REMOTE_USER }}"
 
   roles:
     - ssh_keys

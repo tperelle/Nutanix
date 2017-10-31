@@ -4,12 +4,6 @@
   authorized_key:
     user: treeptik
     state: present
-    key: '{{ item }}'
-  with_items:
-    - "{{ lookup('file', './public_keys/tperelle') }}"
-    - "{{ lookup('file', './public_keys/cvandome') }}"
-    - "{{ lookup('file', './public_keys/nmuller') }}"
-    - "{{ lookup('file', './public_keys/wbartlett') }}"
-    - "{{ lookup('file', './public_keys/ptran') }}"
-    - "{{ lookup('file', './public_keys/jmasson') }}"
-    - "{{ lookup('file', './public_keys/tfabre') }}"
+    key: "{{ lookup('file', '{{ item }}') }}"
+  with_fileglob:
+    - "./{{ FOLDER_SSH_KEYS }}/*"

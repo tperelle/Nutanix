@@ -4,6 +4,7 @@
 # Directories
 DIR_FILES: "{{ playbook_dir }}/files"
 DIR_ROLES: "{{ playbook_dir }}/roles"
+FOLDER_SSH_KEYS: "public_keys"
 
 ####################### REMOTE #########################
 REMOTE_USER: "treeptik"

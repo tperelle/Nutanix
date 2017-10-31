@@ -1,0 +1,8 @@
+---
+
+# Opération sur les groupes :
+# - Intersection de groupes : cluster_infra:&linux
+# - Exclusion de groupes : cluster_infra:!windows
+# http://docs.ansible.com/ansible/latest/intro_patterns.html
+- hosts: cluster_infra:&linux:&worker
+  remote_user: treeptik

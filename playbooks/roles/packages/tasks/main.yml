@@ -9,3 +9,6 @@
   - curl
   - wget
   become: true
+  when:
+    - ansible_distribution == "CentOS"
+    - ansible_distribution == "RedHat"

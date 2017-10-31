@@ -6,4 +6,6 @@
     state: present
   with_items:
   - vim
+  - curl
+  - wget
   become: true

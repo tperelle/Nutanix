@@ -2,7 +2,8 @@
 
 ### Config 
 
-Par défaut, les playbooks utilisent un fichier *hosts* présent à la racine.
+Par défaut, les playbooks utilisent un fichier *hosts* qui doit être présent à la racine.
+Le fichier *group_vars/all.yml* contient les variables. 
 
 ## Roles
 

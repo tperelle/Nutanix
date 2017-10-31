@@ -1,0 +1,9 @@
+---
+
+- hosts: cluster_infra:&linux:&worker
+  remote_user: treeptik
+  gather_facts: False
+
+  roles:
+    - ssh_keys
+    - packages

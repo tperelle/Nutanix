@@ -6,3 +6,4 @@
 # http://docs.ansible.com/ansible/latest/intro_patterns.html
 - hosts: cluster_infra:&linux:&worker
   remote_user: treeptik
+  gather_facts: False

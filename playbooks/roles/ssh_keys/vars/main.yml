@@ -1,0 +1,2 @@
+# Vars for role ssh_keys
+FOLDER_SSH_KEYS: "public_keys"

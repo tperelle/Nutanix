@@ -1,0 +1,10 @@
+version: "3.3"
+
+services:
+
+  prometheus:
+    image: treeptik/prometheus:1.0
+    ports:
+      - "9090:9090"
+    deploy:
+      replicas: 1

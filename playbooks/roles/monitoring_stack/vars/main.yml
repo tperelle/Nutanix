@@ -1,0 +1,14 @@
+# Vars for role monitoring_stack
+
+# Stack
+STACK_SRC_DIR: "/Users/thomas/Dev/Nutanix/app/monitoring"
+STACK_DEST_DIR: "/home/{{ REMOTE_USER }}"
+STACK_NAME: "monitoring"
+STACK_FILE_NAME: "docker-stack.yml"
+STACK_FILE: "{{ STACK_DEST_DIR }}/{{ STACK_NAME }}/{{ STACK_FILE_NAME }}"
+STACK_DEPLY_CMD: "docker stack deploy -c {{ STACK_FILE }} {{ STACK_NAME }}"
+
+# Services
+PROMETHEUS_DIR: "{{ STACK_DEST_DIR }}/{{ STACK_NAME }}/Prometheus"
+PROMOTHEUS_DOCKER_FILE: "{{ PROMETHEUS_DIR }}/Dockerfile"
+PROMETHEUS_TAG: "treeptik/prometheus:1.0"

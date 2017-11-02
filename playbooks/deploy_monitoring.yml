@@ -1,0 +1,7 @@
+---
+
+- hosts: cluster_infra:&master[0]
+  remote_user: treeptik
+
+  roles:
+    - monitoring_stack

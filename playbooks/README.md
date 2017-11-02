@@ -38,15 +38,15 @@ Déploie la stack sur le cluster UCP à partir du premier noeuds `manager`.
 #### verify_linux
 
 Mise en conformité des noeuds linux du cluster :
-- [ssh_keys](# ssh_keys)
-- [packages](# packages)
+- [ssh_keys](#ssh_keys)
+- [packages](#packages)
 
 #### deploy_monitoring
 
 Déploiement de la stack de monitoring :
-  - [monitoring_copy](# monitoring_copy)
-  - [monitoring_build](# monitoring_build)
-  - [monitoring_deploy](# monitoring_deploy)
+  - [monitoring_copy](#monitoring_copy)
+  - [monitoring_build](#monitoring_build)
+  - [monitoring_deploy](#monitoring_deploy)
 
 
 Déploie la stack de monitoring sur un cluster Swarm/UCP :

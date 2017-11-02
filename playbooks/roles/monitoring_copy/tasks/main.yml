@@ -1,0 +1,6 @@
+---
+
+- name: "Copy stack directory on {{ inventory_hostname }}"
+  synchronize:
+    src: "{{ MONITORING_STACK_SRC_DIR }}"
+    dest: "{{ MONITORING_STACK_DEST_DIR }}"

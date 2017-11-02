@@ -7,3 +7,11 @@ DIR_ROLES: "{{ playbook_dir }}/roles"
 
 ####################### REMOTE #########################
 REMOTE_USER: "treeptik"
+
+################ MONITORING STACK ######################
+MONITORING_STACK_SRC_DIR: "/Users/thomas/Dev/Nutanix/app/monitoring"
+MONITORING_STACK_DEST_DIR: "/home/{{ REMOTE_USER }}"
+MONITORING_STACK_NAME: "monitoring"
+MONITORING_MONITORING_STACK_FILE_NAME: "docker-stack.yml"
+MONITORING_STACK_FILE: "{{ MONITORING_STACK_DEST_DIR }}/{{ MONITORING_STACK_NAME }}/{{ MONITORING_MONITORING_STACK_FILE_NAME }}"
+MONITORING_STACK_DEPLY_CMD: "docker stack deploy -c {{ MONITORING_STACK_FILE }} {{ MONITORING_STACK_NAME }}"

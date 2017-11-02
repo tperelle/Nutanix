@@ -1,0 +1,10 @@
+---
+
+- name: "Build {{ NE_TAG }}"
+  command: "docker image build -f {{ NE_DOCKER_FILE }} -t {{ NE_TAG }} {{ NE_DIR }}/."
+
+- name: "Build {{ PROMETHEUS_TAG }}"
+  command: "docker image build -f {{ PROMOTHEUS_DOCKER_FILE }} -t {{ PROMETHEUS_TAG }} {{ PROMETHEUS_DIR }}/."
+
+- name: "Build {{ GRAFANA_TAG }}"
+  command: "docker image build -f {{ GRAFANA_DOCKER_FILE }} -t {{ GRAFANA_TAG }} {{ GRAFANA_DIR }}/."

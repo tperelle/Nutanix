@@ -1,0 +1,17 @@
+# Vars for role monitoring_build
+
+# Services
+#- Prometheus
+PROMETHEUS_DIR: "{{ MONITORING_STACK_DEST_DIR }}/{{ MONITORING_STACK_NAME }}/Prometheus"
+PROMOTHEUS_DOCKER_FILE: "{{ PROMETHEUS_DIR }}/Dockerfile"
+PROMETHEUS_TAG: "treeptik/prometheus:1.0"
+
+#- node-exporter
+NE_DIR: "{{ MONITORING_STACK_DEST_DIR }}/{{ MONITORING_STACK_NAME }}/Node-exporter"
+NE_DOCKER_FILE: "{{ NE_DIR }}/Dockerfile"
+NE_TAG: "treeptik/node-exporter:1.0"
+
+#- Grafana
+GRAFANA_DIR: "{{ MONITORING_STACK_DEST_DIR }}/{{ MONITORING_STACK_NAME }}/Grafana"
+GRAFANA_DOCKER_FILE: "{{ GRAFANA_DIR }}/Dockerfile"
+GRAFANA_TAG: "treeptik/grafana:1.0"

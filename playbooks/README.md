@@ -48,9 +48,3 @@ Déploiement de la stack de monitoring :
   - [monitoring_build](#monitoring_build)
   - [monitoring_deploy](#monitoring_deploy)
 
-
-Déploie la stack de monitoring sur un cluster Swarm/UCP :
-  - Synchronisation du projet sur l'ensemble des noeuds
-  - Build des images de la stack sur chacun des noeuds
-  - Déploiement de la stack à partir
-

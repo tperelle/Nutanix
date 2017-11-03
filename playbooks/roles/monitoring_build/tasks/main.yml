@@ -8,3 +8,6 @@
 
 - name: "Build {{ GRAFANA_TAG }}"
   command: "docker image build -f {{ GRAFANA_DOCKER_FILE }} -t {{ GRAFANA_TAG }} {{ GRAFANA_DIR }}/."
+
+- name: "Build {{ AM_TAG }}"
+  command: "docker image build -f {{ AM_DOCKER_FILE }} -t {{ AM_TAG }} {{ AM_DIR }}/."

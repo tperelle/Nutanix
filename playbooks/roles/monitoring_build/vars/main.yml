@@ -15,3 +15,8 @@ NE_TAG: "treeptik/node-exporter:1.0"
 GRAFANA_DIR: "{{ MONITORING_STACK_DEST_DIR }}/{{ MONITORING_STACK_NAME }}/Grafana"
 GRAFANA_DOCKER_FILE: "{{ GRAFANA_DIR }}/Dockerfile"
 GRAFANA_TAG: "treeptik/grafana:1.0"
+
+#- AlertManager
+AM_DIR: "{{ MONITORING_STACK_DEST_DIR }}/{{ MONITORING_STACK_NAME }}/alertmanager"
+AM_DOCKER_FILE: "{{ AM_DIR }}/Dockerfile"
+AM_TAG: "treeptik/alertmanager:1.0"

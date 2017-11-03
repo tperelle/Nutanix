@@ -8,7 +8,7 @@ networks:
 volumes:
     prometheus: {}
     grafana: {}
-#    alertmanager: {}
+    alertmanager: {}
 
 configs:
   # caddy_config:
@@ -63,6 +63,41 @@ services:
           memory: 128M
         reservations:
           memory: 64M
+
+  alertmanager:
+    image: treeptik/alertmanager:1.0
+    networks:
+      - net
+    environment:
+      - SLACK_URL=${SLACK_URL:-https://hooks.slack.com/services/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}
+      - SLACK_CHANNEL=${SLACK_CHANNEL:-projet-infra}
+      - SLACK_USER=${SLACK_USER:-alertmanager}
+    command:
+      - '-config.file=/etc/alertmanager/alertmanager.yml'
+      - '-storage.path=/alertmanager'
+    volumes:
+      - alertmanager:/alertmanager
+    deploy:
+      mode: replicated
+      replicas: 1
+      placement:
+        constraints:
+          - node.role == manager
+      resources:
+        limits:
+          memory: 128M
+        reservations:
+          memory: 64M
+
+  unsee:
+    image: cloudflare/unsee:v0.8.0
+    networks:
+      - net
+    environment:
+      - "ALERTMANAGER_URIS=default:http://alertmanager:9093"
+    deploy:
+      mode: replicated
+      replicas: 1
 
   node-exporter:
     image: treeptik/node-exporter:1.0

@@ -9,6 +9,6 @@ Mise en place d'une stack de monitoring composée de :
 * Prometheus : "http://[swarm IP]:9090"
 * Alertmanager : 
 * Unsee : "http://[swarm IP]:9093"
-* Grafana : "http://[swarm IP]:80"
+* Grafana : "http://[swarm IP]:9091"
 
 

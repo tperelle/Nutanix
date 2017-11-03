@@ -1,13 +1,15 @@
 ---
 
-- hosts: cluster_infra:&linux
+#- hosts: cluster_cloud:&linux
+ - hosts: cluster_infra:&linux
   remote_user: treeptik
 
   roles:
     - monitoring_copy
     - monitoring_build
 
-- hosts: cluster_infra:&master[0]
+#- hosts: ddp-master01.treeptik.corp
+ - hosts: cluster_infra:&master[0]
   remote_user: treeptik
 
   roles:

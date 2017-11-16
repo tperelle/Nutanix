@@ -1,0 +1,7 @@
+# Vars for role monitoring_build
+
+# Services
+#- JENKINS
+JENKINS_DIR: "{{ CICD_STACK_DEST_DIR }}/{{ CICD_STACK_NAME }}/Jenkins"
+JENKINS_DOCKER_FILE: "{{ JENKINS_DIR }}/Dockerfile"
+JENKINS_TAG: "treeptik/jenkins:1.0"

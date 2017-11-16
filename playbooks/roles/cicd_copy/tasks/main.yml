@@ -1,0 +1,6 @@
+---
+
+- name: "Copy stack directory on {{ inventory_hostname }}"
+  synchronize:
+    src: "{{ CICD_STACK_SRC_DIR }}"
+    dest: "{{ CICD_STACK_DEST_DIR }}"

@@ -1,0 +1,8 @@
+---
+
+- debug:
+    msg: "Hello {{ inventory_hostname }}"
+    verbosity: 2
+
+- name: "Deploy stack on cluster"
+  command: "{{ CICD_STACK_DEPLY_CMD }}"

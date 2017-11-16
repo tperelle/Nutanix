@@ -1,0 +1,4 @@
+---
+
+- name: "Build {{ JENKINS_TAG }}"
+  command: "docker image build -f {{ JENKINS_DOCKER_FILE }} -t {{ JENKINS_TAG }} {{ JENKINS_DIR }}/."

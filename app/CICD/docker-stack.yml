@@ -1,0 +1,55 @@
+version: "3.3"
+
+networks:
+  myci:
+    driver: overlay
+    attachable: true
+
+volumes:
+    gitlab_data: {}
+    gitlab_conf: {}
+    gitlab_logs: {}
+    jenkins: {}
+
+services:
+  # Default account : root / 5iveL!fe
+  gitlab:
+    image: gitlab/gitlab-ce:8.5.8-ce.0
+    networks:
+      - myci
+    volumes:
+      - gitlab_data:/var/opt/gitlab
+      - gitlab_logs:/var/log/gitlab
+      - gitlab_conf:/etc/gitlab
+    ports:
+      - "8181:80"
+      - "8122:22"
+    deploy:
+      replicas: 1
+
+  jenkins:
+    image: treeptik/jenkins:1.0
+    networks:
+      - myci
+    volumes:
+      - jenkins:/var/jenkins_home
+      - /var/run/docker.sock:/var/run/docker.sock
+    ports:
+      - "8182:8080"
+      - "50000:50000"
+    deploy:
+      replicas: 1
+
+  viz:
+    image: dockersamples/visualizer
+    networks:
+      - myci
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+    ports:
+      - "8180:8080"
+    deploy:
+      replicas: 1
+      placement:
+        constraints:
+          - node.role == manager

@@ -70,7 +70,7 @@ services:
       - net
     environment:
       - SLACK_URL=${SLACK_URL:-https://hooks.slack.com/services/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}
-      - SLACK_CHANNEL=${SLACK_CHANNEL:-projet-infra}
+      - SLACK_CHANNEL=${SLACK_CHANNEL:-monitoring}
       - SLACK_USER=${SLACK_USER:-alertmanager}
     command:
       - '-config.file=/etc/alertmanager/alertmanager.yml'

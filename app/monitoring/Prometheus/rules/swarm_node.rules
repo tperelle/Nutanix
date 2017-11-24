@@ -1,5 +1,5 @@
 ALERT node_cpu_usage
-  IF 100 - (avg(irate(node_cpu{mode="idle"}[1m])  * on(instance) group_left(node_name) node_meta * 100) by (node_name)) > 50
+  IF 100 - (avg(irate(node_cpu{mode="idle"}[1m])  * on(instance) group_left(node_name) node_meta * 100) by (node_name)) > 75
   FOR 1m
   LABELS      { severity="warning" }
   ANNOTATIONS {

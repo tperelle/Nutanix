@@ -4,15 +4,15 @@ ALERT monitor_task_high_cpu_usage_50
   FOR 1m
   ANNOTATIONS {
       summary = "CPU alert for Swarm task '{{ $labels.container_label_com_docker_swarm_task_name }}' on '{{ $labels.container_label_com_docker_swarm_node_id }}'",
-      description = "{{ $labels.container_label_com_docker_swarm_task_name }} on '{{ $labels.container_label_com_docker_swarm_node_id }}' CPU usage is at {{ humanize $value}}%.",
+      description = "{{ $labels.container_label_com_docker_swarm_service_name }}.{{ $labels.container_label_com_docker_swarm_task_name }} on '{{ $labels.container_label_com_docker_swarm_node_id }}' CPU usage is at {{ humanize $value}}%.",
   }
 
 ALERT monitor_task_high_memory_usage
-  IF sum(container_memory_usage_bytes{container_label_com_docker_swarm_task_name!~"^monitoring_prometheus.*|^ucp.*|"}) by (container_label_com_docker_swarm_node_id) > 100000000
+  IF sum(container_memory_usage_bytes{container_label_com_docker_swarm_task_name!~"^monitoring_prometheus.*|^ucp.*|"}) by (container_label_com_docker_swarm_node_id) > 200000000
   FOR 1m
   ANNOTATIONS {
       summary = "Memory alert for Swarm task '{{ $labels.container_label_com_docker_swarm_task_name }}' on '{{ $labels.container_label_com_docker_swarm_node_id }}'",
-      description = "{{ $labels.container_label_com_docker_swarm_task_name }} on '{{ $labels.container_label_com_docker_swarm_node_id }}' memory usage is {{ humanize $value}}.",
+      description = "{{ $labels.container_label_com_docker_swarm_service_name }}.{{ $labels.container_label_com_docker_swarm_task_name }} on '{{ $labels.container_label_com_docker_swarm_node_id }}' memory usage is {{ humanize $value}}.",
   }
 
 ALERT monitor_prom_high_memory_usage
@@ -20,5 +20,5 @@ ALERT monitor_prom_high_memory_usage
   FOR 1m
   ANNOTATIONS {
       summary = "Memory alert for Prometheus swarm task '{{ $labels.container_label_com_docker_swarm_task_name }}' on '{{ $labels.container_label_com_docker_swarm_node_id }}'",
-      description = "{{ $labels.container_label_com_docker_swarm_task_name }} on '{{ $labels.container_label_com_docker_swarm_node_id }}' memory usage is {{ humanize $value}}.",
+      description = "{{ $labels.container_label_com_docker_swarm_service_name }}.{{ $labels.container_label_com_docker_swarm_task_name }} on '{{ $labels.container_label_com_docker_swarm_node_id }}' memory usage is {{ humanize $value}}.",
   }

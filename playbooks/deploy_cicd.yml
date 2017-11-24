@@ -2,6 +2,7 @@
 
 #- hosts: cluster_cloud:&linux
 - hosts: cluster_infra:&linux
+  strategy: free
   remote_user: treeptik
 
   roles:
